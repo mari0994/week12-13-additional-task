@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 40px 5% 40px 5%;
+  background-color: rgb(34, 0, 79);
+}
+
+h1, h2, h3, p, input, button, textarea, label {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: orange;
+}
+
+p, h3 {
+  color: white;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.container .chat {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.container .chat img {
+  width: 30%;
+}
+.container .leave-comment {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.container .leave-comment .username, .container .leave-comment .avatar-link {
+  background-color: rgb(140, 89, 208);
+  height: 35px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: white;
+}
+.container .leave-comment .comment {
+  background-color: rgb(140, 89, 208);
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 14px;
+  color: white;
+  border: none;
+}
+.container .leave-comment .add-comment {
+  background-color: orange;
+  color: rgb(34, 0, 79);
+  border: none;
+  width: 35%;
+  height: 40px;
+  font-size: 14px;
+}
+.container .leave-comment .add-comment:active, .container .leave-comment .add-comment:hover {
+  background-color: rgb(147, 114, 55);
+}/*# sourceMappingURL=style.css.map */
