@@ -11,11 +11,19 @@
     <div class="container">
       <div class="chat">
         <h2 class="sub-title">Чат</h2>
-        <img src="" alt="" />
       </div>
       <div class="leave-comment">
         <h2 class="sub-title">Оставьте комментарий</h2>
-        <label class="description" for="name">Ваше имя</label>
+        <div class="show-name">
+          <p class="question">Показывать ваше имя?</p>
+          <label for="box" class="check-description">Да</label>
+          <input class="check" type="radio" name="box" id="yes" checked />
+          <label for="box" class="check-description">Нет</label>
+          <input class="check" type="radio" name="box" id="no" />
+        </div>
+        <label class="description" id="name-description" for="name"
+          >Ваше имя</label
+        >
         <input type="text" name="name" id="name" class="username" />
         <label class="description" for="avatar">Ссылка на ваш аватар</label>
         <input type="url" name="avatar" id="avatar" class="avatar-link" />
