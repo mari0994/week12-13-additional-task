@@ -9,10 +9,26 @@ const name = document.getElementById('name');
 const nameDescription = document.getElementById('name-description');
 const userPhoto = document.createElement('img');
 
+const hideUsernameInput = () => {
+    name.classList.add('hidden');
+    nameDescription.classList.add('hidden');
+}
+
+const showUsernameInput = () => {
+    name.classList.remove('hidden');
+    nameDescription.classList.remove('hidden');
+}
+
 const addName = (userName) => {
     userName = document.createElement('h3');
-    userName.innerText = (name.value[0].toUpperCase() + name.value.substr(1).toLowerCase()).replace(/[\s0-9@#$%^&*(){}+=]/g,'');
-    commentsBox.append(userName);
+
+    if (name.classList.contains('hidden')){
+        userName.innerText = 'username';
+        commentsBox.append(userName);
+    } else {
+        userName.innerText = (name.value[0].toUpperCase() + name.value.substr(1).toLowerCase()).replace(/[\s0-9@#$%^&*(){}+=]/g,'');
+        commentsBox.append(userName);
+    }
 }
 
 const addPhoto = () => {
@@ -24,13 +40,14 @@ const chooseRandomAvatar = () => {
     if (avatar.value === ''){
 
         const images = [
-            './images/1.jpeg',
+            './images/1.jpg',
             './images/2.jpg',
             './images/3.jpg',
-            './images/4.jpeg',
-            './images/5.jpeg',
+            './images/4.jpg',
+            './images/5.jpg',
         ];
-        const randomImage = Math.floor((Math.random()+1) * images.length);
+        const randomImage = Math.floor(Math.random() * images.length);
+        console.log(randomImage);
         userPhoto.setAttribute('src', images[randomImage]);
         commentsBox.append(userPhoto);
     }
@@ -47,16 +64,6 @@ const addDate = (date) => {
     date.innerText = new Date();
     date.classList.add('date');
     commentsBox.append(date);
-}
-
-const hideUsernameInput = () => {
-    name.classList.add('hidden');
-    nameDescription.classList.add('hidden');
-}
-
-const showUsernameInput = () => {
-    name.classList.remove('hidden');
-    nameDescription.classList.remove('hidden');
 }
 
 button.addEventListener('click', addName);
