@@ -15,8 +15,11 @@ const hideUsernameInput = () => {
 }
 
 const showUsernameInput = () => {
-    name.classList.remove('hidden');
-    nameDescription.classList.remove('hidden');
+    if (name.classList.contains('hidden')){
+        name.classList.remove('hidden');
+        nameDescription.classList.remove('hidden');
+    }
+
 }
 
 const addName = (userName) => {
