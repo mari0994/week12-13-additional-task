@@ -69,10 +69,10 @@ const addDate = (date) => {
     commentsBox.append(date);
 }
 
-button.addEventListener('click', addName);
-button.addEventListener('click', addPhoto);
-button.addEventListener('click', addComment);
-button.addEventListener('click', addDate);
-button.addEventListener('click', chooseRandomAvatar);
 noOption.addEventListener('click', hideUsernameInput);
 yesOption.addEventListener('click', showUsernameInput);
+button.addEventListener('click', addName);
+button.addEventListener('click', addPhoto);
+button.addEventListener('click', chooseRandomAvatar);
+button.addEventListener('click', addComment);
+button.addEventListener('click', addDate);
