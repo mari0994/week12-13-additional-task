@@ -7,7 +7,6 @@ const yesOption = document.getElementById('yes');
 const noOption = document.getElementById('no');
 const name = document.getElementById('name');
 const nameDescription = document.getElementById('name-description');
-const userPhoto = document.createElement('img');
 
 const hideUsernameInput = () => {
     name.classList.add('hidden');
@@ -35,6 +34,7 @@ const addName = (userName) => {
 }
 
 const addPhoto = () => {
+    const userPhoto = document.createElement('img');
     userPhoto.setAttribute('src', avatar.value);
     commentsBox.append(userPhoto);
 }
@@ -50,7 +50,7 @@ const chooseRandomAvatar = () => {
             './images/5.jpg',
         ];
         const randomImage = Math.floor(Math.random() * images.length);
-        console.log(randomImage);
+        const userPhoto = document.createElement('img');
         userPhoto.setAttribute('src', images[randomImage]);
         commentsBox.append(userPhoto);
     }
@@ -64,7 +64,8 @@ const addComment = (userComment) => {
 
 const addDate = (date) => {
     date = document.createElement('p');
-    date.innerText = new Date();
+    const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    date.innerText = new Date().toLocaleString('ru-RU', options);
     date.classList.add('date');
     commentsBox.append(date);
 }
