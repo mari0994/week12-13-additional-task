@@ -1,4 +1,3 @@
-"use strict";
 const avatar = document.getElementById('avatar');
 const comment = document.getElementById('comment');
 const button = document.querySelector('.add-comment');
@@ -21,8 +20,8 @@ const showUsernameInput = () => {
 
 }
 
-const addName = (userName) => {
-    userName = document.createElement('h3');
+const addName = () => {
+    const userName = document.createElement('h3');
 
     if (name.classList.contains('hidden')){
         userName.innerText = 'username';
@@ -56,14 +55,14 @@ const chooseRandomAvatar = () => {
     }
 }
 
-const addComment = (userComment) => {
-    userComment = document.createElement('p');
+const addComment = () => {
+    const userComment = document.createElement('p');
     userComment.innerText = (comment.value[0].toUpperCase() + comment.value.substr(1)).replace(/\bviagra\b|\bxxx\b/gi, '***');
     commentsBox.append(userComment);
     }
 
-const addDate = (date) => {
-    date = document.createElement('p');
+const addDate = () => {
+    const date = document.createElement('p');
     const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
     date.innerText = new Date().toLocaleString('ru-RU', options);
     date.classList.add('date');
