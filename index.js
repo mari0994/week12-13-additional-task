@@ -7,6 +7,8 @@ const noOption = document.getElementById('no');
 const name = document.getElementById('name');
 const nameDescription = document.getElementById('name-description');
 
+//лучше добавить проверку на пустые поля в имени (если галочка да нажата) и в комментарии- если пустые, то выводить сообщение "введите хх"
+
 const hideUsernameInput = () => {
     name.classList.add('hidden');
     nameDescription.classList.add('hidden');
@@ -29,13 +31,16 @@ const addName = () => {
     } else {
         userName.innerText = (name.value[0].toUpperCase() + name.value.substr(1).toLowerCase()).replace(/[\s0-9@#$%^&*(){}+=]/g,'');
         commentsBox.append(userName);
-    }
+        name.value = '';
+    } 
+
 }
 
 const addPhoto = () => {
     const userPhoto = document.createElement('img');
     userPhoto.setAttribute('src', avatar.value);
     commentsBox.append(userPhoto);
+    avatar.value = '';
 }
 
 const chooseRandomAvatar = () => {
@@ -59,6 +64,7 @@ const addComment = () => {
     const userComment = document.createElement('p');
     userComment.innerText = (comment.value[0].toUpperCase() + comment.value.substr(1)).replace(/\bviagra\b|\bxxx\b/gi, '***');
     commentsBox.append(userComment);
+    comment.value = '';
     }
 
 const addDate = () => {
